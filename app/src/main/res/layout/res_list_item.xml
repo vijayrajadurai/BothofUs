@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+    android:id="@+id/res_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:textColor="#fff"/>
+
+    <TextView
+        android:id="@+id/res_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"/>
+
+    <TextView
+        android:id="@+id/res_telephone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"/>
+
+    <TextView
+        android:id="@+id/res_website"
+        android:autoLink="web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"/>
+
+    <TextView
+        android:id="@+id/res_openhours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"/>
+
+    <Button
+        android:id="@+id/btn_location"
+        android:layout_width="45dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/location" />
+
+</LinearLayout>
