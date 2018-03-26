@@ -1,6 +1,7 @@
 package mobi.com.bothofus;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -49,6 +50,7 @@ public class ListviewAdapter extends BaseAdapter {
 
     public View getView(int position, View convertView, ViewGroup parent){
 
+
         MyViewHolder mViewHolder;
 
         if (convertView == null) {
@@ -59,8 +61,23 @@ public class ListviewAdapter extends BaseAdapter {
             mViewHolder = (MyViewHolder) convertView.getTag();
         }
 
+        Button locationbutton = (Button)convertView.findViewById(R.id.btn_location);
+        final Restaurants restaurants = restaurantsList.get(position);
+        locationbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,MapsActivity.class);
+                double a = restaurants.getLatitude();
+                intent.putExtra("LAAA",a );
+                intent.putExtra("LO",restaurants.getLongitude());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Log.e(TAG, "onCreateeeeeeeeeeeeeeeeeeeeeeee: "+restaurants.getLatitude()+"Lo : " +restaurants.getLongitude());
+                context.startActivity(intent);
+            }
+        });
+
 //
-        Restaurants restaurants = restaurantsList.get(position);
+
 //
         Log.e(TAG, "restaurants: " + restaurants.toString() );
         Log.e(TAG, "getView: " + restaurants.getName() );
